@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JointHelper</class>
+ <widget class="QMainWindow" name="JointHelper">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>384</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Joint Helper</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+	min-width: 72px;
+}</string>
+  </property>
+  <widget class="QWidget" name="dockerWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>3</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="topLayout">
+      <item>
+       <widget class="QLabel" name="jointHelperLabel">
+        <property name="text">
+         <string>Joint Helper 1.0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="reloadButton">
+        <property name="text">
+         <string>Reload</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="helpButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Help</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QFrame" name="mainFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_27">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QScrollArea" name="mainScroll">
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="mainWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>380</width>
+            <height>593</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <property name="margin">
+            <number>4</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="affectingLayout">
+             <item>
+              <spacer name="affectingSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="affectingLabel">
+               <property name="text">
+                <string>Affecting:</string>
+               </property>
+               <property name="buddy">
+                <cstring>affectingHierarchyRadio</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="affectingRadiosWidget" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QRadioButton" name="affectingHierarchyRadio">
+                  <property name="text">
+                   <string>Hierarchy</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="affectingSelectedRadio">
+                  <property name="text">
+                   <string>Selected</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="affectingAllRadio">
+                  <property name="text">
+                   <string>All</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="selectButton">
+               <property name="text">
+                <string>Select</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="affectingSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="affectingButtonsLayout">
+             <item>
+              <widget class="QPushButton" name="bufferButton">
+               <property name="text">
+                <string>Buffer</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="affectingOrientLine">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="orientAxesLayout">
+             <item>
+              <spacer name="oAxesSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="orientAxesLayout2">
+               <item>
+                <widget class="QWidget" name="aimAxisWidget" native="true">
+                 <layout class="QHBoxLayout" name="aimAxisLayout">
+                  <property name="margin">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="aimAxisLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>55</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Aim Axis:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="aimAxisFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="lineWidth">
+                     <number>5</number>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_3">
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QRadioButton" name="aimAxisXRadio">
+                       <property name="text">
+                        <string>X</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="aimAxisYRadio">
+                       <property name="text">
+                        <string>Y</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="aimAxisZRadio">
+                       <property name="text">
+                        <string>Z</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="aimAxisNoneRadio">
+                       <property name="text">
+                        <string>None</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="aimAxisReverseCB">
+                    <property name="minimumSize">
+                     <size>
+                      <width>65</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Reverse</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="upAxisWidget" native="true">
+                 <layout class="QHBoxLayout" name="upAxisLayout">
+                  <property name="margin">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="upAxisLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>55</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Up Axis:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="upAxisFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="lineWidth">
+                     <number>5</number>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_2">
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QRadioButton" name="upAxisXRadio">
+                       <property name="text">
+                        <string>X</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="upAxisYRadio">
+                       <property name="text">
+                        <string>Y</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="upAxisZRadio">
+                       <property name="text">
+                        <string>Z</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="upAxisNoneRadio">
+                       <property name="text">
+                        <string>None</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="upAxisReverseCB">
+                    <property name="minimumSize">
+                     <size>
+                      <width>65</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Reverse</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="worldUpWidget" native="true">
+                 <layout class="QHBoxLayout" name="worldUpLayout">
+                  <property name="margin">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="worldUpLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>55</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>World Up:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="worldUpFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="lineWidth">
+                     <number>5</number>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout">
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QRadioButton" name="worldUpXRadio">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="text">
+                        <string>X</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="worldUpYRadio">
+                       <property name="text">
+                        <string>Y</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="worldUpZRadio">
+                       <property name="text">
+                        <string>Z</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="worldUpAutoRadio">
+                       <property name="minimumSize">
+                        <size>
+                         <width>48</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="text">
+                        <string>Auto</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="worldUpReverseCB">
+                    <property name="minimumSize">
+                     <size>
+                      <width>65</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Reverse</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <spacer name="zeroScaleOrientSpacerLeft">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>70</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="zeroScaleOrientCB">
+                   <property name="text">
+                    <string>Reorient the local scale axes</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="oAxesSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="orientJointsButton">
+             <property name="text">
+              <string>Orient Joints</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="orientTweakLine">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="tweakLayout">
+             <item>
+              <spacer name="tweakSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="tweakLabel">
+               <property name="text">
+                <string>Tweak:</string>
+               </property>
+               <property name="buddy">
+                <cstring>tweakXDouble</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="tweakXDouble">
+               <property name="decimals">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <double>360.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>5.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="tweakYDouble">
+               <property name="decimals">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <double>360.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>5.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="tweakZDouble">
+               <property name="decimals">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <double>360.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>5.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="tweakZeroButton">
+               <property name="text">
+                <string>Zero</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="tweakSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="tweakButtonsLayout">
+             <item>
+              <widget class="QPushButton" name="tweakPlusButton">
+               <property name="text">
+                <string>Manual + Rot Tweak</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="tweakMinusButton">
+               <property name="text">
+                <string>Manual - Rot Tweak</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="tweakResetFreezeLine">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <spacer name="resetFreezeSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QWidget" name="horizontalWidget_4" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <property name="margin">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="resetFreezeLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>88</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Reset/Freeze:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="rotateCB">
+                    <property name="text">
+                     <string>Rotate</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="scaleCB">
+                    <property name="text">
+                     <string>Scale</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="orientCB">
+                    <property name="text">
+                     <string>Orient (freeze only)</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_2" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_8">
+                  <property name="margin">
+                   <number>1</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="lockedAttsLabel">
+                    <property name="text">
+                     <string>Locked Attributes:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="skipRadio">
+                    <property name="toolTip">
+                     <string>Locked attributes will not be modified.</string>
+                    </property>
+                    <property name="text">
+                     <string>Skip</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QRadioButton" name="overrideRadio">
+                    <property name="toolTip">
+                     <string>Locked attributes will be unlocked, reset
+or frozen and then locked again.</string>
+                    </property>
+                    <property name="text">
+                     <string>Override</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="lockedAttsSpacerRight">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="resetFreezeSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QPushButton" name="resetButton">
+               <property name="text">
+                <string>Reset</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="freezeButton">
+               <property name="text">
+                <string>Freeze</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="resetFreezeTogglesLine">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="axesLayout">
+             <item>
+              <spacer name="axesSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="axesLabel">
+               <property name="minimumSize">
+                <size>
+                 <width>55</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Local Axes:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring>axesShowButton</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="axesShowButton">
+               <property name="text">
+                <string>Show</string>
+               </property>
+               <property name="+command" stdset="0">
+                <string>&quot;from pymel.core import toggle; toggle(state=True, localAxis=True)&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="axesHideButton">
+               <property name="text">
+                <string>Hide</string>
+               </property>
+               <property name="+command" stdset="0">
+                <string>&quot;from pymel.core import toggle; toggle(state=False, localAxis=True)&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="axesToggleButton">
+               <property name="text">
+                <string>Toggle</string>
+               </property>
+               <property name="+command" stdset="0">
+                <string>&quot;from pymel.core import toggle; toggle(localAxis=True)&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="axesSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="labelsLayout">
+             <item>
+              <spacer name="labelsSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelsLabel">
+               <property name="minimumSize">
+                <size>
+                 <width>55</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Labels:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring>labelsShowButton</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="labelsShowButton">
+               <property name="text">
+                <string>Show</string>
+               </property>
+               <property name="+command" stdset="0">
+                <string>&quot;from lava.core.rigging import jointhelper as jh;jh.show_labels()&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="labelsHideButton">
+               <property name="text">
+                <string>Hide</string>
+               </property>
+               <property name="+command" stdset="0">
+                <string>&quot;from lava.core.rigging import jointhelper as jh;jh.hide_labels()&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="labelsToggleButton">
+               <property name="text">
+                <string>Toggle</string>
+               </property>
+               <property name="+command" stdset="0">
+                <string>&quot;from lava.core.rigging import jointhelper as jh;jh.toggle_labels()&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="labelsSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="handlesLayout">
+             <item>
+              <spacer name="handlesSpacerLeft">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="handlesLabel">
+               <property name="minimumSize">
+                <size>
+                 <width>55</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Handles:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring>handlesShowButton</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="handlesShowButton">
+               <property name="text">
+                <string>Show</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="handlesHideButton">
+               <property name="text">
+                <string>Hide</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="handlesToggleButton">
+               <property name="text">
+                <string>Toggle</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="handlesSpacerRight">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="bottomLine">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="spacerBottom">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>mainScroll</tabstop>
+  <tabstop>reloadButton</tabstop>
+  <tabstop>helpButton</tabstop>
+  <tabstop>affectingHierarchyRadio</tabstop>
+  <tabstop>affectingSelectedRadio</tabstop>
+  <tabstop>affectingAllRadio</tabstop>
+  <tabstop>aimAxisXRadio</tabstop>
+  <tabstop>aimAxisYRadio</tabstop>
+  <tabstop>aimAxisZRadio</tabstop>
+  <tabstop>aimAxisReverseCB</tabstop>
+  <tabstop>upAxisXRadio</tabstop>
+  <tabstop>upAxisYRadio</tabstop>
+  <tabstop>upAxisZRadio</tabstop>
+  <tabstop>upAxisReverseCB</tabstop>
+  <tabstop>worldUpXRadio</tabstop>
+  <tabstop>worldUpYRadio</tabstop>
+  <tabstop>worldUpZRadio</tabstop>
+  <tabstop>worldUpReverseCB</tabstop>
+  <tabstop>orientJointsButton</tabstop>
+  <tabstop>tweakXDouble</tabstop>
+  <tabstop>tweakYDouble</tabstop>
+  <tabstop>tweakZDouble</tabstop>
+  <tabstop>tweakZeroButton</tabstop>
+  <tabstop>tweakPlusButton</tabstop>
+  <tabstop>tweakMinusButton</tabstop>
+  <tabstop>axesShowButton</tabstop>
+  <tabstop>axesHideButton</tabstop>
+  <tabstop>axesToggleButton</tabstop>
+  <tabstop>labelsShowButton</tabstop>
+  <tabstop>labelsHideButton</tabstop>
+  <tabstop>labelsToggleButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>aimAxisNoneRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>aimAxisReverseCB</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisNoneRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>upAxisWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>343</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisNoneRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>worldUpWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisZRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>aimAxisReverseCB</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>186</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisZRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>upAxisWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>320</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisYRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>aimAxisReverseCB</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisYRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>upAxisWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>291</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisXRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>aimAxisReverseCB</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aimAxisXRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>upAxisWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>upAxisXRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>worldUpWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>95</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>upAxisYRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>worldUpWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>101</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>upAxisZRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>worldUpWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>upAxisNoneRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>worldUpWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>115</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

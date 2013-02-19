@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LavaMenu</class>
+ <widget class="QMainWindow" name="LavaMenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <widget class="QMenuBar" name="mainMenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="lava">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Lava</string>
+    </property>
+    <widget class="QMenu" name="dockers">
+     <property name="tearOffEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Dockers</string>
+     </property>
+     <addaction name="exporter"/>
+     <addaction name="jointHelper"/>
+     <addaction name="renamer"/>
+     <addaction name="rigger"/>
+     <addaction name="spliner"/>
+    </widget>
+    <widget class="QMenu" name="shapes">
+     <property name="tearOffEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Shapes</string>
+     </property>
+     <addaction name="nullAction"/>
+     <addaction name="locator"/>
+     <addaction name="plus"/>
+     <addaction name="separator"/>
+     <addaction name="circle"/>
+     <addaction name="square"/>
+     <addaction name="cube"/>
+     <addaction name="sphere"/>
+     <addaction name="arrow"/>
+     <addaction name="cross"/>
+     <addaction name="orient"/>
+     <addaction name="bulb"/>
+     <addaction name="separator"/>
+     <addaction name="joint"/>
+     <addaction name="custom"/>
+    </widget>
+    <widget class="QMenu" name="constraints">
+     <property name="tearOffEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Constraints</string>
+     </property>
+     <addaction name="snap"/>
+    </widget>
+    <addaction name="dockers"/>
+    <addaction name="shapes"/>
+    <addaction name="constraints"/>
+    <addaction name="createSnCloth"/>
+    <addaction name="separator"/>
+    <addaction name="visitWebsite"/>
+    <addaction name="rehashAndReload"/>
+   </widget>
+   <addaction name="lava"/>
+  </widget>
+  <action name="jointHelper">
+   <property name="text">
+    <string>Joint Helper...</string>
+   </property>
+  </action>
+  <action name="nullAction">
+   <property name="text">
+    <string>Null</string>
+   </property>
+  </action>
+  <action name="locator">
+   <property name="text">
+    <string>Locator</string>
+   </property>
+  </action>
+  <action name="plus">
+   <property name="text">
+    <string>Plus</string>
+   </property>
+  </action>
+  <action name="circle">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="square">
+   <property name="text">
+    <string>Square</string>
+   </property>
+  </action>
+  <action name="cube">
+   <property name="text">
+    <string>Cube</string>
+   </property>
+  </action>
+  <action name="sphere">
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="arrow">
+   <property name="text">
+    <string>Arrow</string>
+   </property>
+  </action>
+  <action name="cross">
+   <property name="text">
+    <string>Cross</string>
+   </property>
+  </action>
+  <action name="orient">
+   <property name="text">
+    <string>Orient</string>
+   </property>
+  </action>
+  <action name="bulb">
+   <property name="text">
+    <string>Bulb</string>
+   </property>
+  </action>
+  <action name="joint">
+   <property name="text">
+    <string>Joint</string>
+   </property>
+  </action>
+  <action name="custom">
+   <property name="text">
+    <string>Custom</string>
+   </property>
+  </action>
+  <action name="renamer">
+   <property name="text">
+    <string>Renamer...</string>
+   </property>
+  </action>
+  <action name="snap">
+   <property name="text">
+    <string>Snap</string>
+   </property>
+  </action>
+  <action name="visitWebsite">
+   <property name="text">
+    <string>Visit Website...</string>
+   </property>
+  </action>
+  <action name="rehashAndReload">
+   <property name="text">
+    <string>Rehash and Reload</string>
+   </property>
+  </action>
+  <action name="rigger">
+   <property name="text">
+    <string>Rigger...</string>
+   </property>
+  </action>
+  <action name="exporter">
+   <property name="text">
+    <string>Exporter...</string>
+   </property>
+  </action>
+  <action name="createSnCloth">
+   <property name="text">
+    <string>Create snCloth</string>
+   </property>
+  </action>
+  <action name="spliner">
+   <property name="text">
+    <string>Spliner...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
